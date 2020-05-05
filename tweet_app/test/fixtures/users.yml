@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: にんじゃわんこ
+  email: wanko@prog-8.com
+
+two:
+  name: ひつじ仙人
+  email: hitsuji@prog-8.com
+
+three:
+  name: 西村ひろゆき
+  email: i_am_BasicIncomer@gmail.com
+
+four:
+  name: 加藤純一
+  email: unkochan893@yahoo.co.jp
