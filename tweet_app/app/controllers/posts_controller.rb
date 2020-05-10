@@ -16,6 +16,11 @@ class PostsController < ApplicationController
   # 投稿照会画面
   def show
     @post = Post.find_by(id: params[:id])
+    @like = Like.find_by(
+      user_id: @current_user.id,
+      post_id: params[:id]
+    )
+    @likes_count = Like.where(post_id: params[:id]).count
   end
 
   # 投稿編集画面
@@ -25,7 +30,10 @@ class PostsController < ApplicationController
 
   # 新規投稿画面
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id
+    )
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
