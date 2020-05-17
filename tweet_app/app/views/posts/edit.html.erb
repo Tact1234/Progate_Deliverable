@@ -3,7 +3,24 @@
     <h1 class="form-heading">編集する</h1>
     <%= form_tag("/posts/#{@post.id}/update") do %>
       <div class="form">
-        <div class="form-body">
+        <div class="form-tweet-body">
+          <div class="post-left">
+            <%= link_to("/users/#{@current_user.id}") do %>
+              <img src="<%= "/user_images/#{@current_user.image_name}" %>">
+            <% end %>
+            <div style="margin-left:10px;">
+              <%= link_to("/users/#{@current_user.id}") do %>
+                <div>
+                  <div style="font-weight:bold">
+                    <%= @current_user.name %>
+                  </div>
+                  <div style="color:gray">
+                    <%= @current_user.email %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
           <% @post.errors.full_messages.each do |message| %>
             <div class="form-error">
               <%= message %>

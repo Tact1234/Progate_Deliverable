@@ -2,6 +2,7 @@
   <div class="container">
     <div class="form-heading">ログイン</div>
     <div class="form users-form">
+      <%# ログインフォーム %>
       <div class="form-body">
         <% if @error_message %>
           <div class="form-error">
@@ -13,6 +14,23 @@
           <input type="text" name="email" value="<%= @email %>">
           <p>パスワード</p>
           <input type="text" name="password" type="password" value="<%= @passoword %>">
+          <input type="submit" value="ログイン">
+        <% end %>
+      </div>
+
+      <%# 簡易ログインフォーム %>
+      <div class="form-body">
+        <p>簡易ログイン</p>
+        <% if @error_message_simple %>
+          <div class="form-error">
+            <%= @error_message_simple %>
+          </div>
+        <% end %>
+        <%= form_tag("/login_simple") do %>
+          <p>ユーザー</p>
+          <div>
+            <%= collection_select(:user, :id, @users, :id, :name, {include_blank: true}, id: 'user') %>
+          </div>
           <input type="submit" value="ログイン">
         <% end %>
       </div>

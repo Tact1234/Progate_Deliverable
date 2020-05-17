@@ -3,13 +3,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_user, {only:[:edit, :update, :destroy]}
 
-  # 投稿一覧画面
+  # ホーム画面
   def index
-    @posts=Post.all.order(created_at: :desc)
-  end
-
-  # 新規投稿画面
-  def new
+    @followings = Follow.select("following_user_id").where(user_id: @current_user.id)
+    @posts=Post.where(user_id: @followings)
+      .or(Post.where(user_id: @current_user.id))
+      .order(updated_at: :desc)
     @post = Post.new
   end
 
@@ -38,7 +37,11 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
     else
-      render("posts/new")
+      @followings = Follow.select("following_user_id").where(user_id: @current_user.id)
+      @posts=Post.where(user_id: @followings)
+        .or(Post.where(user_id: @current_user.id))
+        .order(updated_at: :desc)
+      render("posts/index")
     end
   end
 

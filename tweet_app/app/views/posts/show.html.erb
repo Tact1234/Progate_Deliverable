@@ -1,5 +1,8 @@
 <div class="main posts-show">
   <div class="container">
+    <%= link_to("/posts/index") do %>
+      <span class="fas fa-angle-left page_back">一覧に戻る</span>
+    <% end %>
     <div class="posts-show-item">
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@post.user.image_name}" %>">
@@ -9,8 +12,26 @@
         <%= @post.content %>
       </p>
       <div class="post-time">
-        <%= @post.created_at %>
+        <%= l @post.updated_at %>
       </div>
+
+      <% #リプライボタン %>
+      <i class="far fa-comment"></i>
+      <%= @likes_count %>
+
+      <% #リツイートボタン %>
+      <% if Like.find_by(user_id: @current_user.id,post_id: @post.id) %>
+        <%= link_to("/likes/#{@post.id}/destroy",{method: "post"}) do %>
+          <span class="fa fa-retweet retweet-btn-on"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create",{method: "post"}) do %>
+          <span class="fa fa-retweet retweet-btn-off"></span>
+        <% end %>
+      <% end %>
+      <%= @likes_count %>
+
+      <% #いいねボタン %>
       <% if Like.find_by(user_id: @current_user.id,post_id: @post.id) %>
         <%= link_to("/likes/#{@post.id}/destroy",{method: "post"}) do %>
           <span class="fa fa-heart like-btn-unlike"></span>
@@ -21,6 +42,7 @@
         <% end %>
       <% end %>
       <%= @likes_count %>
+
       <div class="post-menus">
         <% if @post.user_id == @current_user.id %>
           <%= link_to("編集","/posts/#{@post.id}/edit") %>

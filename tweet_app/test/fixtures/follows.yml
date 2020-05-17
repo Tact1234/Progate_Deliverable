@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# 投稿件数取得
+<% user_count = User.all.count %>
+
+# id:2,id:3は全員フォロー
+<% 1.upto(user_count) do |n| %>
+<% if n != 2 %>
+all_follow_<%= n %>:
+  user_id: 2
+  following_user_id: <%= n %>
+<% end %>
+
+<% if n != 3 %>
+all_follow<%= n + user_count %>:
+  user_id: 3
+  following_user_id: <%= n %>
+<% end %>
+<% end %>
+
+follow_1:
+  user_id: 4
+  following_user_id: 2
+
+follow_2:
+  user_id: 4
+  following_user_id: 3
+
+follow_3:
+  user_id: 4
+  following_user_id: 5
+
+follow_4:
+  user_id: 4
+  following_user_id: 6
+
+follow_5:
+  user_id: 4
+  following_user_id: 7
+
+follow_6:
+  user_id: 5
+  following_user_id: 6
+
+follow_7:
+  user_id: 5
+  following_user_id: 4
+
+follow_8:
+  user_id: 6
+  following_user_id: 5
+
+follow_9:
+  user_id: 7
+  following_user_id: 5

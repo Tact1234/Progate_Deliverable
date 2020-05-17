@@ -2,12 +2,34 @@
   <div class="container">
     <div class="user">
       <img src=<%= "/user_images/#{@user.image_name}"%>>
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-        <%= link_to("編集","/users/#{@user.id}/edit") %>
+        <div class="profile">
+          <div class="button_edit">
+            <%= link_to("プロフィールを編集","/users/#{@user.id}/edit") %>
+          </div>
+          <div class="UserDescription">
+            <%= @user.id %>
+          </div>
+        </div>
+      <% else %>
+        <div class="button_follow">
+          <% if Follow.find_by(user_id: @current_user.id,following_user_id: @user.id) %>
+              <%= link_to("フォロー中","/follows/#{@user.id}/destroy",{method: "post"}) %>
+          <% else %>
+              <%= link_to("フォローする","/follows/#{@user.id}/create",{method: "post"}) %>
+          <% end %>
+        </div>
       <% end %>
     </div>
+    <div>
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+    </div>
+    <%= @follows_count %>
+    <%= link_to("フォロー","/users/#{@user.id}/followings") %>
+    <%= @followers_count %>
+    <%= link_to("フォロワー","/users/#{@user.id}/followers") %>
+
     <ul class="user-tabs">
       <li><%= link_to("投稿","/users/#{@user.id}") %></li>
       <li class="active"><%= link_to("いいね！","/users/#{@user.id}/likes") %></li>

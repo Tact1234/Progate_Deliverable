@@ -1,7 +1,148 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  content: TEST
+post_1:
+  id: 1
+  content: tweetAppはじめました。よろしくお願いします。
+  user_id: 2
+  created_at: '2020-05-01 10:00:00.000000'
+  updated_at: '2020-05-01 10:00:00.000000'
 
-two:
-  content: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa100aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa140
+post_2:
+  id: 2
+  content: 新型コロナウイルスで自粛中
+  user_id: 2
+  created_at: '2020-05-01 12:00:00.000000'
+  updated_at: '2020-05-01 12:00:00.000000'
+
+post_3:
+  id: 3
+  content: 今日は作ったアプリをHerokuにあげてみました
+  user_id: 2
+  created_at: '2020-05-02 10:00:00.000000'
+  updated_at: '2020-05-02 10:00:00.000000'
+
+post_4:
+  id: 4
+  content: Rubyの勉強中です！
+  user_id: 3
+  created_at: '2020-04-22 10:00:00.000000'
+  updated_at: '2020-04-22 10:00:00.000000'
+
+post_5:
+  id: 5
+  content: 今日はお休み！
+  user_id: 3
+  created_at: '2020-05-03 10:00:00.000000'
+  updated_at: '2020-05-03 10:00:00.000000'
+
+post_6:
+  id: 6
+  content: ポートフォリオ作成中！
+  user_id: 3
+  created_at: '2020-05-05 10:00:00.000000'
+  updated_at: '2020-05-05 10:00:00.000000'
+
+post_7:
+  id: 7
+  content: AWSの勉強中です！
+  user_id: 3
+  created_at: '2020-05-10 10:00:00.000000'
+  updated_at: '2020-05-10 10:00:00.000000'
+
+post_8:
+  id: 8
+  content: ITエンジニア用語 Botです。
+  user_id: 4
+  created_at: '2020-05-01 11:00:00.000000'
+  updated_at: '2020-05-01 11:00:00.000000'
+
+post_9:
+  id: 9
+  content: オンプレミスとはサーバー・ネットワーク・ソフトウェアなどの情報システムを使用者の施設内で運用する、いわゆる「自社運用」のことだよ。
+  user_id: 4
+  created_at: '2020-05-03 11:00:00.000000'
+  updated_at: '2020-05-03 11:00:00.000000'
+
+post_10:
+  id: 10
+  content: CDN(Content Delivery Network)とは、分散させた配信サーバーからコンテンツを配信することで、オリジンとなるサーバーに負荷をかけず、かつ高速にコンテンツを取得できるようにする仕組みのことだよ。動画の配信などでよく使われるよ。
+  user_id: 4
+  created_at: '2020-05-04 14:00:00.000000'
+  updated_at: '2020-05-04 14:00:00.000000'
+
+post_11:
+  id: 11
+  content: BFF(Backend for Frontend)は、マイクロサービスに対するバックエンドのUI部でクライアント↔マイクロサービスの間を取り持つ「フロントエンドのためのバックエンドサーバ」だよ。リバースプロキシとバックエンドのAPIサーバの間に設置するのが一般的だよ。
+  user_id: 4
+  created_at: '2020-05-05 14:00:00.000000'
+  updated_at: '2020-05-05 14:00:00.000000'
+
+post_12:
+  id: 12
+  content: NAS(Network Attached Storage)とは、ネットワークに接続された記憶装置(ストレージ)のことだよ。社内の共有ファイルの置き場として使用されたりするんだ。
+  user_id: 4
+  created_at: '2020-05-06 14:00:00.000000'
+  updated_at: '2020-05-06 14:00:00.000000'
+
+post_13:
+  id: 13
+  content: プロキシ(proxy)とは、アクセス先のコンピュータの「代理」(proxy)として、ネットワーク通信の仲介をするサーバや、代理機能を持つソフトウェアのことだよ
+  user_id: 4
+  created_at: '2020-05-07 14:00:00.000000'
+  updated_at: '2020-05-07 14:00:00.000000'
+
+post_14:
+  id: 14
+  content: VPN(Virtual Private Network)とは、仮想プライベートネットワークのこと。インターネット上に仮想の専用ネットワークを作って、安全に情報のやり取りを行うことができるよ。
+  user_id: 4
+  created_at: '2020-05-08 14:00:00.000000'
+  updated_at: '2020-05-08 14:00:00.000000'
+
+post_15:
+  id: 15
+  content: KPI（Key Performance Indicator）とは、経営上で重要な目標の達成に対する状況を示す指標のことだよ。日本語では「重要業績評価指標」とも。
+  user_id: 4
+  created_at: '2020-05-09 14:00:00.000000'
+  updated_at: '2020-05-09 14:00:00.000000'
+
+post_16:
+  id: 16
+  content: POC（Proof Of Concept：概念実証）とは、新しい概念や理論、原理などが実現可能であることを示すための施行のこと。不完全あるいは部分的なデモンストレーションによって実現可能かどうかを示すよ。
+  user_id: 4
+  created_at: '2020-05-10 14:00:00.000000'
+  updated_at: '2020-05-10 14:00:00.000000'
+
+post_17:
+  id: 17
+  content: 「ポリモーフィズム」とは、「抽象クラス」や「インターフェース」などを利用してメソッドの呼び出し方法を共通化し、さらに「オーバーライド」させることで同じメソッドを呼び出しても、実際のインスタンス毎にその挙動を変化させようとするものだよ。
+  user_id: 4
+  created_at: '2020-05-11 14:00:00.000000'
+  updated_at: '2020-05-11 14:00:00.000000'
+
+post_18:
+  id: 18
+  content: うそはうそであると見抜ける人でないと（掲示板を使うのは）難しい
+  user_id: 5
+  created_at: '2000-05-11 12:38:00.000000'
+  updated_at: '2000-05-11 12:38:00.000000'
+
+post_19:
+  id: 19
+  content: これからの日本、ベーシックインカムなんじゃないかなと思っています。
+  user_id: 5
+  created_at: '2020-05-01 12:38:00.000000'
+  updated_at: '2020-05-01 12:38:00.000000'
+
+post_20:
+  id: 20
+  content: 元ライブドア社長の堀江貴文です。tweetApp始めました。
+  user_id: 6
+  created_at: '2013-03-27 09:38:00.000000'
+  updated_at: '2013-03-27 09:38:00.000000'
+
+post_21:
+  id: 21
+  content: セイ―
+  user_id: 7
+  created_at: '2020-04-27 19:12:00.000000'
+  updated_at: '2020-04-27 19:12:00.000000'

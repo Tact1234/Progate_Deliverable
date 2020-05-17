@@ -1,4 +1,5 @@
 /* users/index ================================ */
+/* line 2, app/assets/stylesheets/users.scss */
 .users-heading {
   font-weight: 300;
   margin: 60px 0 20px;
@@ -6,8 +7,9 @@
   color: #bcc8d4;
 }
 
+/* line 9, app/assets/stylesheets/users.scss */
 .users-index-item {
-  padding: 10px 30px;
+  padding: 20px 30px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
@@ -15,27 +17,32 @@
   width: 100%;
 }
 
+/* line 18, app/assets/stylesheets/users.scss */
 .user-left img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
 }
 
+/* line 26, app/assets/stylesheets/users.scss */
 .user-name a {
   font-weight: 600;
 }
 
+/* line 30, app/assets/stylesheets/users.scss */
 .user-name a:hover {
-  color: #6699FF;
+  color: #3ecdc6;
 }
 
+/* line 34, app/assets/stylesheets/users.scss */
 .user-left {
   float: left;
   width: 10%;
 }
 
+/* line 39, app/assets/stylesheets/users.scss */
 .user-right {
   width: 90%;
   padding-left: 25px;
@@ -45,59 +52,77 @@
 }
 
 /* users/show ================================ */
-.user{
-  display:flex;
+/* line 48, app/assets/stylesheets/users.scss */
+.user-show {
+  text-align: center;
 }
 
+/* line 52, app/assets/stylesheets/users.scss */
+.user {
+  margin-bottom: 20px;
+}
+
+/* line 56, app/assets/stylesheets/users.scss */
 .user img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
   object-fit: cover;
 }
 
+/* line 65, app/assets/stylesheets/users.scss */
 .user h2 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
 }
 
+/* line 71, app/assets/stylesheets/users.scss */
 .user p {
   font-size: 13px;
   margin-bottom: 15px;
 }
 
+/* line 76, app/assets/stylesheets/users.scss */
 .user a {
+  color: #8899a6;
+  text-decoration: underline;
   font-weight: 200;
 }
 
+/* line 82, app/assets/stylesheets/users.scss */
 .user span {
   color: #afb6bf;
   font-weight: 200;
   padding: 0 6px 0 8px;
 }
 
+/* line 88, app/assets/stylesheets/users.scss */
 .user-tabs {
-  margin-top: 15px;
+  margin-top: 40px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+/* line 95, app/assets/stylesheets/users.scss */
 .user-tabs li {
   float: left;
 }
 
+/* line 99, app/assets/stylesheets/users.scss */
 .user-tabs li.active {
-  border-bottom: 2px solid #6699FF;
+  border-bottom: 2px solid #3ecdc6;
 }
 
+/* line 103, app/assets/stylesheets/users.scss */
 .user-tabs li.active a {
   color: #57575f;
 }
 
+/* line 107, app/assets/stylesheets/users.scss */
 .user-tabs a {
   display: inline-block;
   padding: 16px 30px;
@@ -105,6 +130,7 @@
 }
 
 /* users/new, users/edit ================================ */
+/* line 114, app/assets/stylesheets/users.scss */
 .users-form input {
   margin-bottom: 15px;
 }

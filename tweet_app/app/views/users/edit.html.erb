@@ -2,6 +2,9 @@
   <div class="container">
     <div class="form-heading">アカウント編集</div>
     <div class="form users-form">
+      <%= link_to("/users/#{@user.id}") do %>
+        <span class="fas fa-angle-left page_back">マイページ</span>
+      <% end %>
       <div class="form-body">
         <% @user.errors.full_messages.each do |message| %>
           <div class="form-error">

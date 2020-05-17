@@ -6,17 +6,21 @@ class UsersController < ApplicationController
 
   # ユーザー一覧画面
   def index
-    @users = User.all.order(created_at: :desc)
+    @users = User.all.order(updated_at: :desc)
   end
 
   # ユーザー照会画面
   def show
     @user = User.find_by(id: params[:id])
+    @follows_count = Follow.where(user_id: @user.id).count
+    @followers_count = Follow.where(following_user_id: @user.id).count
   end
 
   # ユーザー編集画面
   def edit
     @user = User.find_by(id: params[:id])
+    @follows_count = Follow.where(user_id: @user.id).count
+    @followers_count = Follow.where(following_user_id: @user.id).count
   end
 
   # ユーザー更新処理
@@ -60,11 +64,14 @@ class UsersController < ApplicationController
 
   # ログイン画面
   def login_form
+    @users = User.all
   end
 
   # ログイン処理
   def login
     @user = User.find_by(email: params[:email])
+    @users = User.all
+
     if @user && @user.authenticate(params[:password])
       flash[:notice] = "ログインしました。"
       session[:user_id] = @user.id
@@ -73,6 +80,20 @@ class UsersController < ApplicationController
       @error_message = "メールアドレスまたはパスワードに誤りがあります。"
       @email = params[:email]
       @password = params[:password]
+      render("users/login_form")
+    end
+  end
+
+  # 簡易ログイン処理
+  def login_simple
+    @user = User.find_by(id: params[:user][:id])
+    @users = User.all
+    if @user
+      flash[:notice] = "ログインしました。"
+      session[:user_id] = @user.id
+      redirect_to("/posts/index")
+    else
+      @error_message_simple = "ユーザーを選択してください。"
       render("users/login_form")
     end
   end
@@ -96,6 +117,18 @@ class UsersController < ApplicationController
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: params[:id])
+    @followers_count = Follow.where(following_user_id: @user.id).count
+    @follows_count = Follow.where(user_id: @user.id).count
   end
 
+  # フォロー機能
+  def followings
+    @user = User.find_by(id: params[:user_id])
+    @followings = Follow.where(user_id: @user.id)
+  end
+
+  def followers
+    @user = User.find_by(id: params[:user_id])
+    @followers = Follow.where(following_user_id: @user.id)
+  end
 end

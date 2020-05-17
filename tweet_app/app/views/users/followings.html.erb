@@ -1,0 +1,32 @@
+<div class="main user-show">
+  <div class="container">
+    <%= link_to("/users/#{@user.id}") do %>
+      <span class="fas fa-angle-left page_back">
+        <%= @user.name %>
+      </span>
+    <% end %>
+
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("フォロー","/users/#{@user.id}/followings") %></li>
+      <li><%= link_to("フォロワー","/users/#{@user.id}/followers") %></li>
+    </ul>
+
+    <% if @followings.count != 0 %>
+      <% @followings.each do |following| %>
+        <% user = User.find_by(id: following.following_user_id) %>
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="<%= "/user_images/#{user.image_name}" %>">
+          </div>
+          <div class="post-right">
+            <div class="post-user-name">
+              <%= link_to(user.name,"/users/#{user.id}") %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="posts-index-item">まだ誰もフォローしていません</div>
+    <% end %>
+  </div>
+</div>

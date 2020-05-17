@@ -1,17 +1,51 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http: //api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: にんじゃわんこ
-  email: wanko@prog-8.com
+user_1:
+  id: 1
+  name: 管理者ユーザー
+  email: admin@gmail.com
+  image_name: default.jpg
+  password_digest: <%= User.digest('Admin') %>
 
-two:
-  name: ひつじ仙人
-  email: hitsuji@prog-8.com
+user_2:
+  id: 2
+  name: 試験太郎
+  email: taro@gmail.com
+  image_name: 2.jpg
+  password_digest: <%= User.digest('pass') %>
 
-three:
-  name: 西村ひろゆき
-  email: basicIncome@gmail.com
+user_3:
+  id: 3
+  name: 試験花子
+  email: hanako@gmail.com
+  image_name: 3.jpg
+  password_digest: <%= User.digest('pass') %>
 
-four:
+user_4:
+  id: 4
+  name: 開発次郎
+  email: jiro@gmail.com
+  image_name: 4.jpg
+  password_digest: <%= User.digest('pass') %>
+
+user_5:
+  id: 5
+  name: 西村博之
+  email: basicincome@gmail.com
+  image_name: 5.jpg
+  password_digest: <%= User.digest('pass') %>
+
+user_6:
+  id: 6
+  name: 堀江貴文
+  email: livedoor@gmail.com
+  image_name: 6.jpg
+  password_digest: <%= User.digest('pass') %>
+
+user_7:
+  id: 7
   name: 加藤純一
   email: unkochan12345@gmail.com
+  image_name: 7.jpg
+  password_digest: <%= User.digest('pass') %>
+

@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: MyString
-  post_id: MyString
+# 投稿件数取得
+<% post_count = Post.all.count %>
 
-two:
-  user_id: MyString
-  post_id: MyString
+# id:2,id:3は全ていいね
+<% 1.upto(post_count) do |n| %>
+all_like_<%= n %>:
+  user_id: 2
+  post_id: <%= n %>
+
+all_like_<%= n + post_count %>:
+  user_id: 3
+  post_id: <%= n %>
+<% end %>
