@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
 
+  # リツイート機能
+  post 'retweets/:post_id/create' => 'retweets#create'
+  post 'retweets/:post_id/destroy' => 'retweets#destroy'
+
   # フォロー機能
   post 'follows/:user_id/create' => 'follows#create'
   post 'follows/:user_id/destroy' => 'follows#destroy'

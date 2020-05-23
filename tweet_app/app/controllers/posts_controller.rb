@@ -5,11 +5,22 @@ class PostsController < ApplicationController
 
   # ホーム画面
   def index
-    @followings = Follow.select("following_user_id").where(user_id: @current_user.id)
-    @posts=Post.where(user_id: @followings)
-      .or(Post.where(user_id: @current_user.id))
-      .order(updated_at: :desc)
     @post = Post.new
+    @followings = Follow.select("following_user_id").where(user_id: @current_user.id)
+    member = Post.left_joins(:retweets)
+      .select("
+        posts.id,
+        posts.user_id,
+        posts.content,
+        retweets.id as retweet_id,
+        posts.updated_at
+      ")
+      .order(updated_at: :desc)
+    @posts=member
+      .where('retweets.user_id': @current_user.id)
+      .or(member.where('posts.user_id': @current_user.id))
+      .or(member.where('posts.user_id': @followings))
+
   end
 
   # 投稿照会画面

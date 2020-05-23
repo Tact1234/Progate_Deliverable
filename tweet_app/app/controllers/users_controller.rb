@@ -14,6 +14,21 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @follows_count = Follow.where(user_id: @user.id).count
     @followers_count = Follow.where(following_user_id: @user.id).count
+
+    # 投稿記事＆リツイート記事を取得
+    member = Post.left_joins(:retweets)
+      .select("
+        posts.id,
+        posts.user_id,
+        posts.content,
+        retweets.id as retweet_id,
+        posts.updated_at
+      ")
+      .order(updated_at: :desc)
+    @posts=member
+      .where('retweets.user_id': @user.id)
+      .or(member.where('posts.user_id': @user.id))
+
   end
 
   # ユーザー編集画面
@@ -127,6 +142,7 @@ class UsersController < ApplicationController
     @followings = Follow.where(user_id: @user.id)
   end
 
+  # フォロー機能
   def followers
     @user = User.find_by(id: params[:user_id])
     @followers = Follow.where(following_user_id: @user.id)

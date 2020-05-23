@@ -12,6 +12,8 @@ gem 'rails', '~> 6.0.0'
 #gem 'sqlite3'
 gem 'pg'
 gem 'rails-i18n'
+gem 'hirb'
+gem 'hirb-unicode'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.0'
 # Use SCSS for stylesheets

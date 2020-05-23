@@ -4,6 +4,14 @@
       <span class="fas fa-angle-left page_back">一覧に戻る</span>
     <% end %>
     <div class="posts-show-item">
+      <% retweet_flg = Retweet.find_by(user_id: @current_user.id,post_id: @post.id) %>
+      <% @likes_count = @post.likes.count %>
+      <% @retweets_count = Retweet.where(post_id: @post.id).count %>
+      <% if retweet_flg %>
+        <div class="fa fa-retweet retweet-btn-off retweet-flg" style="margin-bottom:20px;">
+          <%= "リツイート済み" %>
+        </div>
+      <% end %>
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@post.user.image_name}" %>">
         <%= link_to(@post.user.name,"/users/#{@post.user.id}") %>
@@ -17,19 +25,19 @@
 
       <% #リプライボタン %>
       <i class="far fa-comment"></i>
-      <%= @likes_count %>
+      <%= 0 %>
 
       <% #リツイートボタン %>
-      <% if Like.find_by(user_id: @current_user.id,post_id: @post.id) %>
-        <%= link_to("/likes/#{@post.id}/destroy",{method: "post"}) do %>
+      <% if retweet_flg %>
+        <%= link_to("/retweets/#{@post.id}/destroy",{method: "post"}) do %>
           <span class="fa fa-retweet retweet-btn-on"></span>
         <% end %>
       <% else %>
-        <%= link_to("/likes/#{@post.id}/create",{method: "post"}) do %>
+        <%= link_to("/retweets/#{@post.id}/create",{method: "post"}) do %>
           <span class="fa fa-retweet retweet-btn-off"></span>
         <% end %>
       <% end %>
-      <%= @likes_count %>
+      <%= @retweets_count %>
 
       <% #いいねボタン %>
       <% if Like.find_by(user_id: @current_user.id,post_id: @post.id) %>
