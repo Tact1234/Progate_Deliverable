@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* posts/index ================================ */
+/* line 2, app/assets/stylesheets/posts.scss */
+.posts-index-item {
+  padding: 15px 20px 5px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+/* line 9, app/assets/stylesheets/posts.scss */
+.post-left img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+/* line 17, app/assets/stylesheets/posts.scss */
+.post-user-name {
+  display: flex;
+}
+
+/* line 21, app/assets/stylesheets/posts.scss */
+.post-user-name a {
+  font-weight: 600;
+}
+
+/* line 25, app/assets/stylesheets/posts.scss */
+.post-user-name a:hover {
+  color: #6699FF;
+}
+
+/* line 29, app/assets/stylesheets/posts.scss */
+.post-left {
+  display: flex;
+  float: left;
+  width: 10%;
+}
+
+/* line 35, app/assets/stylesheets/posts.scss */
+.post-right {
+  float: left;
+  width: 90%;
+  padding-left: 10px;
+  text-align: left;
+}
+
+/* line 42, app/assets/stylesheets/posts.scss */
+.post-text {
+  line-height: 1.0;
+}
+
+/* posts/show ================================ */
+/* line 47, app/assets/stylesheets/posts.scss */
+.posts-show form {
+  display: inline;
+}
+
+/* line 51, app/assets/stylesheets/posts.scss */
+.posts-show-item {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+}
+
+/* line 58, app/assets/stylesheets/posts.scss */
+.posts-show-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #c1ced7;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/* line 67, app/assets/stylesheets/posts.scss */
+.posts-show-item .post-user-name a {
+  vertical-align: middle;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+/* line 73, app/assets/stylesheets/posts.scss */
+.posts-show-item p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* line 78, app/assets/stylesheets/posts.scss */
+.post-time {
+  color: #8899a6;
+  margin-bottom: 10px;
+}
+
+/* line 83, app/assets/stylesheets/posts.scss */
+.like-btn {
+  color: #8899a6;
+}
+
+/* line 87, app/assets/stylesheets/posts.scss */
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+/* line 90, app/assets/stylesheets/posts.scss */
+.retweet-btn-on {
+  color: #00FF99;
+}
+
+/* line 94, app/assets/stylesheets/posts.scss */
+.retweet-btn-off {
+  color: #8899a6;
+}
+
+/* line 98, app/assets/stylesheets/posts.scss */
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+/* line 103, app/assets/stylesheets/posts.scss */
+.post-menus {
+  float: right;
+}
+
+/* line 107, app/assets/stylesheets/posts.scss */
+.post-menus a, .post-menus input {
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* posts/new ================================ */
+/* line 114, app/assets/stylesheets/posts.scss */
+.posts-new textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 140px;
+  border: 1px solid #d8dadf;
+  resize: none;
+}
+
+/* line 122, app/assets/stylesheets/posts.scss */
+.posts-new textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+/* 投稿フォーム================================ */
+/* line 127, app/assets/stylesheets/posts.scss */
+.form-tweet-body {
+  padding: 20px 20px 10px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  width: 100%;
+}
+
+/* line 134, app/assets/stylesheets/posts.scss */
+.form-tweet-index {
+  float: right;
+  width: 90%;
+}
+
+/* line 139, app/assets/stylesheets/posts.scss */
+.form-tweet {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 146, app/assets/stylesheets/posts.scss */
+.form-tweet input {
+  background-color: white;
+  width: 100%;
+  border: 1px solid #d8dadf;
+  padding: 5px;
+  color: #57575f;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+/* line 157, app/assets/stylesheets/posts.scss */
+.form-tweet textarea {
+  resize: none;
+  width: 100%;
+  min-height: 60px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* line 165, app/assets/stylesheets/posts.scss */
+.form-tweet input[type="submit"] {
+  background-color: #6699FF;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 80px;
+  border-radius: 2px;
+  margin-bottom: 0;
+  float: right;
+}
